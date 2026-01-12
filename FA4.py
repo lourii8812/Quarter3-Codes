@@ -15,13 +15,16 @@ for name, stepz in zip(names, steps):
         f"{stepz[0]:<5} | {stepz[1]:<5} | {stepz[2]:<5} | "
         f"{stepz[3]:<5} | {stepz[4]:<5}"
     )
-dictm = {}
+maxsteps = 0
+nameW = " "
+listv = []
 for i in range(len(steps)):
     totalsum = 0
-    for j in range(len(steps[i])):
-        sum1 = steps[0+i][0+j]
-        totalsum = totalsum + sum1
-    dictm[names[i]] = totalsum
-print(dictm)
-maxdict = max(dictm, key = dictm.get)
-print(f"The person with the highest amount of steps is {maxdict} with {dictm[maxdict]} steps.")
+    totalsum = sum(steps[i])
+    listv.append(totalsum)
+    print(f"Total steps of {names[i]}: {totalsum}")
+    if totalsum > maxsteps:
+        nameW = names[i]
+diff = max(listv) - min(listv)
+print(f"The person with the highest number of steps is: {nameW} !!!")
+print(f"The difference between highest and lowest values is: {diff} steps.")
