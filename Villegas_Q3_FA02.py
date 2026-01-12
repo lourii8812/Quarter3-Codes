@@ -1,3 +1,5 @@
+names = ["Lourence", "Liana", "Eonise", "Lezeth", "Chariena"]
+
 expenses = [
   [120,  95, 150, 110, 130],  
   [200, 180, 220, 210, 190],  
