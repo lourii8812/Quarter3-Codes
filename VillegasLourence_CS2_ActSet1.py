@@ -1,4 +1,4 @@
-student_data1 = {}
+student = {"name" : "", "age" : "", "favsubj" : ""}
 main = [] 
 
 x = int(input('Enter 1 to start: '))
@@ -19,16 +19,18 @@ if x == 1:
             y = input('Student name: ')
             i = input('Age of student: ')
             z = input('Favorite subject: ')
+            student['name'] = y
+            student['age'] = i
+            student['favsubj'] = z
+            studentd = student.copy()
+            main.append(studentd)
             
-            new_student = {"name": y, "age": i, "favsubj": z}
-            main.append(new_student)
-            
-            print(f"Added:\n Name: {new_student['name']} \n Age: {new_student['age']} \n Favorite subject: {new_student['favsubj']}")
+            print(f"Added:\n Name: {student['name']} \n Age: {student['age']} \n Favorite subject: {student['favsubj']}")
         elif x == 2:
             if len(main) > 0:
                 print("Summary:")
-                for student in main:
-                    print(f"Name: {student['name']} | Age: {student['age']} | Fav Subject: {student['favsubj']}")
+                for studentz in main:
+                    print(f"Name: {studentz['name']} | Age: {studentz['age']} | Fav Subject: {studentz['favsubj']}")
             else:
                 print("No data to summarize!")
         elif x == 0:
@@ -36,4 +38,5 @@ if x == 1:
             break
 
         else:
+
             print("Invalid choice! Try again.")
